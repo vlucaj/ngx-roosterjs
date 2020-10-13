@@ -30,7 +30,10 @@
             "styles": [
               "projects/app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "roosterjs"
+            ]
           },
           "configurations": {
             "production": {
