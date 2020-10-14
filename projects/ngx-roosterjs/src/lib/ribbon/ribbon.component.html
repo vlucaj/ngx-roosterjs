@@ -1,0 +1,5 @@
+<div class="ribbon">
+    <lib-ribbon-button *ngFor="let key of objectKeys(buttons); let i=index" [button]="buttons[key]" [key]="key"
+        [format]="format" [editor]="editor" (buttonClicked)="onButtonClick($event)">
+    </lib-ribbon-button>
+</div>
