@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Editor, EditorOptions, EditorPlugin, ContentEdit, Paste, HyperLink, Undo } from 'roosterjs';
+import { RibbonPlugin } from './plugins/ribbon.plugin';
 import * as RoosterJs from 'roosterjs';
 
 @Component({
@@ -9,6 +10,7 @@ import * as RoosterJs from 'roosterjs';
 })
 export class NgxRoosterjsComponent implements OnInit {
   public editor: RoosterJs.Editor;
+  public ribbonPlugin = new RibbonPlugin();
 
   constructor(private elRef: ElementRef) { }
 
@@ -22,6 +24,7 @@ export class NgxRoosterjsComponent implements OnInit {
       new ContentEdit(),
       new Paste(true /*useDirectPaste*/),
       new HyperLink(href => 'Ctrl+click to open link ' + href),
+      this.ribbonPlugin
     ];
     const undo = new Undo(true /*preserveSnapshot*/);
     const options: EditorOptions = {

@@ -1,5 +1,4 @@
 <div class="editor-container">
-    <div #editorRef id="editorDiv"></div>
-  </div>
-  
-  
+  <lib-ribbon *ngIf="editor" [plugin]="ribbonPlugin"></lib-ribbon>
+  <div #editorRef id="editorDiv"></div>
+</div>
